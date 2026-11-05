@@ -1,0 +1,61 @@
+/* Changes the layout for larger screens */
+@media only screen and (min-width: 40rem) {
+
+    /* Keeps the main page sections from getting too wide */
+    header,
+    main,
+    nav,
+    footer {
+        max-width: 1200px; /* Sets the widest the content can grow */
+        margin: 0 auto; /* Centers the content on the page */
+    }
+
+    
+    /******************************** NAVIGATION ********************************/
+/* Controls the navigation on larger screens */
+nav {
+    display: block; /* Keeps the navigation visible on larger screens */
+}
+
+/* Places the navigation links in a row */
+nav ul {
+    display: flex; /* Places the links next to each other */
+    margin-left: 10px; /* Adds a little space on the left side of the menu */
+}
+
+/* Controls the look of each navigation link */
+nav a {
+    border-left: solid 1px var(--color-mygrey-30); /* Adds a line to the right side of the last link */
+    padding: .4rem 20px;
+}
+
+/* Adds a divider line to the last navigation link */
+nav li:last-child a {
+    border-right: solid 1px var(--color-mygrey-30); /* Adds a line to the right side of the last link */
+}
+
+/******************************** HEADER ********************************/
+header {
+    grid-template-columns: 1fr;
+}
+
+
+
+
+/******************************** HAMBURGER ********************************/
+/* Controls the hamburger button on larger screens */
+.hamburger {
+    display: none; /* Hides the hamburger button when the full navigation is visible */
+}
+
+
+/******************************** PARK BUTTONS ********************************/
+/* Displays all four national park buttons in one row on larger screens */
+.park-buttons {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+} /* Ends the larger-screen layout rules */

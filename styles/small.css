@@ -1,0 +1,290 @@
+/* Changes the layout for smaller screens */
+
+/******************************** COLOR SCHEME ********************************/
+:root {
+    --color-primary: #244D3B;
+    --color-secondary: #F2B544;
+
+    /*Series of Grey Scale Colors*/
+    --color-mygrey-05: lab(98% 0 0);
+    --color-mygrey-10: lab(97% 0 0);
+    --color-mygrey-20: lab(91% 0 0);
+    --color-mygrey-30: lab(85% 0 0);
+    --color-mygrey-40: lab(66% 0 0);
+    --color-mygrey-50: lab(48% 0 0);
+    --color-mygrey-60: lab(34% 0 0);
+    --color-mygrey-70: lab(27% 0 0);
+    --color-mygrey-80: lab(15% 0 0);
+    --color-mygrey-90: lab(8% 0 0);
+    --color-mygrey-95: lab(3% 0 0);
+
+
+}
+
+
+/******************************** BORDER BOX ********************************/
+/* Makes sizing and scrolling work more smoothly on the whole page */
+* {
+    box-sizing: border-box;
+    /* Makes sizing and scrolling work more smoothly on the whole page */
+    scroll-behavior: smooth;
+    /* Makes the page scroll smoothly when moving to another section */
+}
+
+/******************************** BODY TAGS ********************************/
+/* Controls the basic look of the whole page */
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    /* Uses the chosen font on the whole page */
+    background-color: var(--color-mygrey-05);
+    /* Changes the color of the website background */
+    padding-bottom: 110px;
+    /*Gives space on the bottom */
+    /* Controls how the national park background images appear */
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+/******************************** HEADER ********************************/
+/* Controls how the top header of the page looks */
+header {
+    padding: 10px 0 10px 10px;
+    /* Adds space around the inside of the header */
+    display: grid;
+    /* Places the logo, site name, and menu button in a row */
+    grid-template-columns: 1fr 44px;
+    /* Sets the width of the logo, site name area, and menu button */
+    align-items: center;
+    /* Lines the items up along the bottom */
+    column-gap: 8px;
+    /* Adds space between the items */
+    border-bottom: solid 1px var(--color-mygrey-20);
+    /* Adds space between the items */
+}
+
+header img {
+    display: block;
+    /* Makes the logo behave like its own block */
+    width: 138px;
+    /* Makes the logo fill the width of its grid space */
+    height: auto;
+    /* Keeps the logo from looking stretched */
+    padding-bottom: 5px;
+    /* Adds a space under the logo */
+}
+
+
+
+/******************************** NAVIGATION ********************************/
+/* Controls how the navigation menu looks */
+nav {
+    background-color: var(--color-mygrey-20);
+    /* Sets the background color of the navigation menu */
+    display: none;
+    /* Hides the menu on small screens until the hamburger is clicked */
+}
+
+nav ul {
+    margin: 0;
+    /* Removes the outside space around the navigation list */
+    padding: 0;
+    /* Removes the inside space around the navigation list */
+    list-style-type: none;
+    /* Removes the bullet points from the navigation links */
+}
+
+/* Controls the navigation links and how they look */
+nav a {
+    display: block;
+    /* Makes each navigation link take up its own full row */
+    font-size: .8rem;
+    /* Sets the size of the navigation link text */
+    font-weight: 400;
+    /* Sets the navigation text to normal thickness */
+    color: var(--color-mygrey-90);
+    text-decoration: none;
+    padding: .85rem 10px;
+}
+
+/* Changes how a navigation link looks when the mouse is over it */
+nav a:hover {
+    background-color: var(--color-secondary);
+    /*Sets the background color of the hover over on navigation menu*/
+    color: var(--color-mygrey-10);
+    /* Changes the text color when hovering over a link */
+    /*Sets the font color of the hover over on navigation menu*/
+}
+
+/* Shows which navigation link is the current page */
+nav li.active a {
+    background-color: var(--color-primary);
+    /* Changes the background color of the active page link */
+    color: var(--color-mygrey-10);
+}
+
+/* Shows the navigation menu after the hamburger button is clicked */
+nav.show {
+    display: block;
+    /* Makes the hidden navigation menu appear */
+}
+
+
+
+/******************************** HAMBURGER ********************************/
+/* Controls how the hamburger menu button looks */
+.hamburger {
+    background: none;
+    /* Removes the button background */
+    border: none;
+    /* Removes the button border */
+    color: var(--color-primary);
+    /* Sets the hamburger icon color */
+    cursor: pointer;
+    /* Makes the mouse show a pointer over the button */
+    font-size: 2rem;
+    /* Sets the size of the hamburger icon */
+    font-family: Verdana;
+    /* Uses Verdana for the hamburger symbol */
+}
+
+/* Shows the hamburger icon before the menu opens */
+.hamburger::before {
+    content: "\2630";
+    /* Displays the hamburger symbol */
+}
+
+/* Changes the hamburger into a close icon when the menu is open */
+.hamburger.show::before {
+    content: "\00D7";
+    /* Displays the X close symbol */
+}
+
+/******************************** MAIN STUFF ********************************/
+h1 {
+    font-size: 1.5rem;
+    /* Sets the heading text size */
+    color: white;
+    /* Sets the heading text color */
+    font-weight: 500;
+    /* Sets the text thickness */
+    margin-left: 10px;
+    /* Adds space to the left of the heading so it's not on the edge of the page */
+    text-shadow: 0 0 1px #000, 0 0 2px #000;
+}
+
+
+/******************************** WEATHER INFORMATION ********************************/
+/* Controls the area that displays the selected national park's weather */
+#weather {
+    margin: 10px;
+    padding: 1rem;
+    background-color: rgba(245, 241, 232, 0.9);
+    border-radius: 6px;
+}
+
+/******************************** PARK BUTTONS ********************************/
+/* Keeps the park buttons and footer together at the bottom of the browser */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Arranges the four national park buttons above the footer */
+.park-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* Controls how each national park button looks */
+.park-buttons button {
+    background-color: var(--color-primary);
+    color: white;
+    border: solid 1px var(--color-secondary);
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Changes the button colors when the mouse hovers over it */
+.park-buttons button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+/* Highlights the currently selected national park */
+.park-buttons button.current {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+/******************************** SOCIAL STUFF ********************************/
+/* Controls the social media icon section */
+.social {
+    display: flex;
+    /* Places the social icons in a row */
+    justify-content: center;
+    /*Centers the icons in the section*/
+    column-gap: 8px;
+    /*Adds space between icons*/
+}
+
+/* Controls the size of the social media icons */
+.social img {
+    display: block;
+    /* Makes each icon behave like its own block */
+    width: 22px;
+    /*Sets the width of each icon*/
+    height: 22px;
+    /*Sets the height of each icon*/
+}
+
+/* Controls the clickable boxes around the social media icons */
+.social a {
+    border: solid 1px var(--color-mygrey-30);
+    /* Adds a thin border around each link */
+    border-radius: 4px;
+    /* Slightly rounds the corners of each box */
+    width: 44px;
+    /* Sets the width of each icon box */
+    height: 44px;
+    /* Sets the height of each icon box */
+    display: flex;
+    /* Lets the icon be centered inside the box */
+    justify-content: center;
+    /* Centers the icon from left to right */
+    align-items: center;
+    /* Centers the icon from top to bottom */
+    background-color: var(--color-mygrey-05);
+    /* Gives the icon box a light transparent background */
+}
+
+/* Changes the social icon box when the mouse is over it */
+.social a:hover {
+    background-color: var(--color-mygrey-10);
+    /* Makes the background lighter when hovering over the icon */
+}
+
+
+/******************************** FOOTER STUFF ********************************/
+/* Controls how the footer at the bottom of the page looks */
+footer {
+    background-color: var(--color-mygrey-20);
+    /* Sets the footer background color */
+    padding: 1rem 0;
+    /* Adds space above and below the footer content */
+    text-align: center;
+    /* Centers the footer text */
+    font-weight: 200;
+    /* Makes the text thicker or thinner */
+    font-size: .75rem;
+    /* Sets the footer text size */
+
+}
